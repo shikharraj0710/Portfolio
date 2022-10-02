@@ -1,3 +1,86 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    background-color: #eeeff1;
+    position: relative;
+}
+
+
+::-webkit-scrollbar{
+    width: 7px !important
+  }
+
+  ::-webkit-scrollbar-track{
+    background-color: #a1a1a1 !important;
+
+  }
+
+  ::-webkit-scrollbar-thumb{
+    background-color: #000 !important;
+    border-radius: 75px;
+  }
+  .text-darkGrey {
+    color: #696868;
+  }
+  .bg-darkGrey {
+    background-color: #696868;
+  }
+  .text-customBlack {
+    color: #1e1e1e;
+  }
+  .bg-customBlack {
+    background-color: #1e1e1e;
+  }
+  .text-darkGolden {
+    color: #eba352;
+  }
+  .bg-darkGolden {
+    background: #eba352;
+  }
+  .text-pureWhite {
+    color: #ffffff;
+  }
+  .bg-pureWhite {
+    background-color: #ffffff;
+  }
+  .text-customRed {
+    color: #f22e3e;
+  }
+  .bg-customRed {
+    background-color: #f22e3e;
+  }
+  .border-darkGolden {
+    border-color: #eba352;
+  }
+  @keyframes modal-open {
+    from {
+      opacity: 0;
+      top: 0;
+    } 
+    to {
+      opacity: 1;
+      top: 25%;
+    }
+  }
+  @keyframes modal-close {
+    from {
+      opacity: 1;
+      top: 25%;
+    } 
+    to {
+      opacity: 0;
+      top: 0;
+    }
+  }
+
+  .modal-animation-open {
+    animation: modal-open 0.5s cubic-bezier(0, 0.65, 0, 1.43) forwards;
+  }
+  .modal-animation-close {
+    animation: modal-close 0.5s cubic-bezier(0, 0.65, 0, 1.43) forwards;
+  }
+  .splide__arrow {
+    display: none;
+  }
