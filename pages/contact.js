@@ -1,8 +1,10 @@
-import React, { useState, useRef } from "react";
+import Head from "next/head";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import Modal from "../components/Modal"
 import { server } from "../config";
 
-export default function ContactForm() {
+export default function Contact() {
   const {
     register,
     handleSubmit,
@@ -10,7 +12,7 @@ export default function ContactForm() {
   } = useForm();
   const [info, setInfo] = useState({});
   const [nameErr, setNameErr] = useState(false);
-
+  const [show, setShow] = useState(false)
   const handleForm = (e) => {
     let pattern = /^[a-z]+$/i;
     if(e.target.name == "name" && !pattern.test(e.target.value) && e.target.value?.trim() != '')  setNameErr(true) 
@@ -22,6 +24,7 @@ export default function ContactForm() {
 
   const handleFormSubmit = (e) => {
     let pattern = /^[a-z]+$/i;
+
     Object.keys(info).includes("name") &&
       Object.keys(info).includes("email") &&
       pattern.test(info?.name) ?
@@ -37,16 +40,7 @@ export default function ContactForm() {
         .then(() => {
           document.getElementById("form").reset();
           setNameErr(false);
-          document.getElementById("my-modal").classList.remove("hidden");
-          document
-            .getElementById("modal-content")
-            .classList.contains("modal-animation-close") &&
-            document
-              .getElementById("modal-content")
-              .classList.remove("modal-animation-close");
-          document
-            .getElementById("modal-content")
-            .classList.add("modal-animation-open");
+          setShow(true)
             setInfo(() => {})
         })) :
         setNameErr(true)
@@ -55,7 +49,9 @@ export default function ContactForm() {
 
   return (
     <>
-      <div  className="border-4  rounded-4 border-darkGolden  rounded-lg w-[80%] mx-auto py-8 px-6 flex flex-col md:flex-row items-start md:items-center md:mb-20 mb-10">
+       <Head><title>Contact</title></Head>
+       <Modal  show={show} setShow={setShow}/>
+      <div  className="border-4 mt-10 lg:mt-20 rounded-4 border-darkGolden  rounded-lg w-[80%] mx-auto py-8 px-6 flex flex-col md:flex-row items-start md:items-center md:mb-20 mb-10">
         <div className="font-heading text-center  text-4xl capitalize text-customBlack tracking-wide md:w-[50%] mb-10 md:mb-0 ">
           want to get in touch ?
         </div>
@@ -125,7 +121,7 @@ export default function ContactForm() {
                 )}
               </div>
             </div>
-            <div className="flex flex-col gap-2 md:px-7 mt-6 md:mt-4 lg:mt-0">
+            <div className="flex flex-col gap-2 md:px-7 mt-6 lg:mt-0">
               <label htmlFor="message">Message</label>
               <textarea
                 spellCheck="off"
@@ -150,7 +146,7 @@ export default function ContactForm() {
                 )}
             </div>
 
-            <div className="flex justify-center lg:justify-end md:px-7 md:mt-5 mt-6 lg:mt-2">
+            <div className="flex justify-center md:justify-end md:px-7 md:mt-5 mt-6 lg:mt-0 ">
               <button
                 type="button"
                 onClick={handleSubmit(handleFormSubmit)}
@@ -166,3 +162,4 @@ export default function ContactForm() {
     </>
   );
 }
+

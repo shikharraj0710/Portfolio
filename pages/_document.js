@@ -3,7 +3,8 @@ import { Html, Head, Main, NextScript } from "next/document";
 export default function Document() {
   return (
     <Html>
-      <Head>
+      <Head>  
+      <link rel='shortcut icon' type='image/x-icon' href='/images/logo.png' />
         <link
           href="https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap"
           rel="stylesheet"
@@ -26,9 +27,6 @@ export default function Document() {
         <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/splide.min.css" />
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
 
-
-        <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.2/dist/flowbite.min.css" />
-        <script defer src="https://unpkg.com/flowbite@1.5.2/dist/flowbite.js"></script>
       </Head>
       <body>
         <Main />
