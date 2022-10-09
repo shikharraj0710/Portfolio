@@ -51,13 +51,13 @@ export default function Contact() {
     <>
        <Head><title>Contact</title></Head>
        <Modal  show={show} setShow={setShow}/>
-      <div  className="border-4 mt-10 lg:mt-20 rounded-4 border-darkGolden  rounded-lg w-[80%] mx-auto py-8 px-6 flex flex-col md:flex-row items-start md:items-center md:mb-20 mb-10">
+      <div  className="border-4 mt-10 lg:mt-20 rounded-4 border-darkGolden  rounded-lg w-[95%] lg:w-[80%] mx-auto py-8 px-6 flex flex-col md:flex-row items-start md:items-center md:mb-20 mb-10">
         <div className="font-heading text-center  text-4xl capitalize text-customBlack tracking-wide md:w-[50%] mb-10 md:mb-0 ">
           want to get in touch ?
         </div>
-        <div className="grow font-content">
+        <div className="font-content w-full md:w-auto md:grow">
           <form id="form" autoComplete="off">
-            <div className="flex justify-around md:mb-5">
+            <div className="flex  flex-col md:flex-row  justify-around md:mb-5">
               <div className="flex flex-col gap-2">
                 <label htmlFor="name">Full Name</label>
                 <input
