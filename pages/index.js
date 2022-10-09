@@ -5,12 +5,10 @@ import ContactForm from "../components/ContactForm";
 import Modal from "../components/Modal"
 import Head from "next/head";
 import { server } from "../config/index.js";
-import { useRouter } from "next/router";
+
 
 export default function Index({ data }) {
   const [show, setShow] = useState(false);
-  const router = useRouter();
-  console.log(router.asPath)
 
   return (
     <>

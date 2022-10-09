@@ -61,7 +61,7 @@ export default function ContactForm() {
         </div>
         <div className="font-content w-full md:w-auto md:grow">
           <form id="form" autoComplete="off">
-            <div className="flex flex-col md:flex-row justify-around md:mb-5">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-0 justify-around md:mb-5">
               <div className="flex flex-col gap-2">
                 <label htmlFor="name">Full Name</label>
                 <input

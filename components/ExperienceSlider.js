@@ -17,6 +17,8 @@ export default function ExperienceSlider({ data}) {
               type: "loop",
               autoplay: true,
               interval: 2000,
+              easing : "ease",
+              drag : true,  
             }}
           >
             {data?.data?.map((d, index) => {

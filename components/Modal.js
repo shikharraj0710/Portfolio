@@ -55,12 +55,13 @@ export default function Modal({ show, setShow }) {
   return (
     <>
       <div
-        className="fixed hidden inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-100"
+        className="fixed hidden inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full "
         id="my-modal"
+        style={{zIndex : "100"}}
       >
         <div
           id="modal-content"
-          className="relative mx-auto p-5 border shadow-lg rounded-md bg-white w-[40%]"
+          className="relative mx-auto p-5 border shadow-lg rounded-md bg-white w-[80%] lg:w-[40%]"
         >
           <div className="mt-3 text-center ">
             <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
@@ -83,7 +84,7 @@ export default function Modal({ show, setShow }) {
               Submitted!!!
             </h3>
             <div className="mt-2 px-7 py-3">
-              <p className="text-sm text-gray-500">
+              <p className="text-xs md:text-sm text-gray-500">
                 Your message has been taken into account. I'll get back to you
                 ASAP.
               </p>
