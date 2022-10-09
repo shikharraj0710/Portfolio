@@ -6,7 +6,6 @@ import Modal from "../components/Modal"
 import Head from "next/head";
 import { server } from "../config/index.js";
 import { useRouter } from "next/router";
-import absoluteUrl from "next-absolute-url";
 
 export default function Index({ data }) {
   const [show, setShow] = useState(false);
@@ -24,13 +23,7 @@ export default function Index({ data }) {
   );
 }
 
-export async function getServerSideProps({ req }) {
-  
-  const { origin } = absoluteUrl(req, req.headers.host);
-  console.log('Requested URL ->',origin); 
-  // (or) other way
-  const host = absoluteUrl(req, req.headers.host);
-  console.log('Requested URL ->',host.origin); 
+export async function getServerSideProps() {
 
 
   const res = await fetch(`${server}/api/skill`, {

@@ -9,6 +9,7 @@
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@splidejs/react-splide": "^0.7.10",
+    "axios": "^1.1.2",
     "mongoose": "^6.5.2",
     "next": "latest",
     "nextjs-progressbar": "^0.0.14",

@@ -28,7 +28,7 @@ export default function ContactForm() {
     (  setNameErr(false),
        (info?.message?.toString().trim() == '' && setInfo(prev => ({...prev, message : ''}))),
        console.log(info),
-      fetch(`${server}/api/form`, {
+      fetch(`/api/form`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(info),
