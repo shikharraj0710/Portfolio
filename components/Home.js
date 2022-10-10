@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
+import Image from 'next/image';
 
 export default function Home() {
 	return (
 			<div className="w-[90%] md:w-[80%] mx-auto flex px-5 py-10 md:py-16 md:flex-row flex-col items-center">
 				<div className="lg:max-w-lg lg:w-full md:w-1/2  mb-10 md:mb-0 drop-shadow-lg ">
-					<img src="/images/image.jpg" width="500" height="400" alt="My Photo" className='rounded-lg brightness-125 shadow-md md:shadow-lg shadow-[#eba352]'/>
+					<Image src="/images/image.jpg" width="500" height="400" alt="My Photo" className='rounded-lg brightness-125 shadow-md md:shadow-lg shadow-[#eba352]'/>
 				</div>
 				<div className="lg:flex-grow md:w-1/2 lg:pl-24  flex flex-col md:items-start  items-center w-[80%]">
 					<div className="title-font text-5xl md:text-7xl mb-4  font-heading text-customBlack">
