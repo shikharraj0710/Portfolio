@@ -6,7 +6,7 @@ import Image from 'next/image'
 export default function Footer() {
 	return (
 			<div className=" px-5 py-8 mx-auto flex items-center sm:flex-row flex-col bg-customBlack">
-			<Link href="/"><a ><Image src='/../public/images/logo.png' width={40} height={45} /></a></Link>
+			<Link href="/"><a ><Image src='/images/logo.png' width={40} height={45} /></a></Link>
 				<p className="text-sm sm:ml-4 text-darkGrey sm:pl-4 sm:border-l-2 sm:border-darkGrey sm:py-2 sm:mt-0 mt-4" title='LinkedIN'>
 					© 2022 Copyright -----
 					<Link href="https://www.linkedin.com/in/shikhar-raj-mishra-839998224"><a target="_blank" className='text-darkGolden text-md tracking-wider hover:underline hover:scale-150 font-sans'>@shikharraj</a></Link>
