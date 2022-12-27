@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #eeeff1;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 7px !important;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #a1a1a1 !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #000 !important;
+  border-radius: 75px;
+}
+.text-darkGrey {
+  color: #696868;
+}
+.bg-darkGrey {
+  background-color: #696868;
+}
+.text-customBlack {
+  color: #1e1e1e;
+}
+.bg-customBlack {
+  background-color: #1e1e1e;
+}
+.text-darkGolden {
+  color: #eba352;
+}
+.bg-darkGolden {
+  background: #eba352;
+}
+.text-pureWhite {
+  color: #ffffff;
+}
+.bg-pureWhite {
+  background-color: #ffffff;
+}
+.text-customRed {
+  color: #f22e3e;
+}
+.bg-customRed {
+  background-color: #f22e3e;
+}
+.border-darkGolden {
+  border-color: #eba352;
+}
+@keyframes modal-open {
+  from {
+    opacity: 0;
+    top: 0;
+  }
+  to {
+    opacity: 1;
+    top: 25%;
+  }
+}
+@keyframes modal-close {
+  from {
+    opacity: 1;
+    top: 25%;
+  }
+  to {
+    opacity: 0;
+    top: 0;
+  }
+}
+
+@keyframes progress {
+  from {
+    height: 0%;
+    opacity: 0;
+  }
+  to {
+    height: 90%;
+    opacity: 1;
+  }
+}
+
+.animate-progress {
+  animation: progress 3s cubic-bezier(0, 0.65, 0, 1.43) alternate infinite;
+}
+
+.splide__pagination__page {
+  background-color: #eba352;
+}
+
+.modal-animation-open {
+  animation: modal-open 0.5s cubic-bezier(0, 0.65, 0, 1.43) forwards;
+}
+.modal-animation-close {
+  animation: modal-close 0.5s cubic-bezier(0, 0.65, 0, 1.43) forwards;
+}
+.splide__arrow {
+  top: 120% !important;
+}
+.splide__pagination {
+  bottom: -1.5em !important;
+}
+.splide__pagination__page {
+  background-color: #eba352!important;
+}
+.splide__arrow {
+  background-color: #eba352!important;
+}
+.splide__arrow svg path{
+  fill: #fff!important;
+}
+@media  screen and (max-width: 700px) {
+  .splide__arrow {
+    display: none!important;
+  }
+  .splide__pagination__page {
+    top: 2em;
+  }
+}
+@keyframes slide_one {
+  from {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animation-slide {
+  animation: slide_one 0.5s cubic-bezier(0, 0.65, 0, 1.43) forwards;
+}
