@@ -2,6 +2,7 @@ import React from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import BorderColorIcon from '@mui/icons-material/BorderColor';
+import Link from "next/link";
 
 export default function ExperienceSlider({ data }) {
 
@@ -12,9 +13,11 @@ export default function ExperienceSlider({ data }) {
           experience
         </div>
         <div className="flex rounded-lg h-full bg-gray-100  px-4 py-16 flex-col relative">
-          <a href="/admin/experienceOperation">
+          <Link href="/admin/experienceOperation">
+          <a>
             <BorderColorIcon className="absolute transition-all md:right-3 md:top-3 hover:scale-125 focus:scale-125 cursor-pointer hover:text-black " titleAccess="Modify?" />
           </a>
+          </Link>
 
           <Splide
             aria-label="Banner Information"
@@ -33,7 +36,7 @@ export default function ExperienceSlider({ data }) {
                     <div className="text-md md:text-lg text-gray-600 text-bold font-mono font-bold">
                       {d?.institute}
                     </div>
-                    <div className="text-sm">
+                    <div className="text-sm text-center">
                       <p>{d?.title} </p>
                       <p>{d?.duration}</p>
                       <p>{d?.expertise}</p>

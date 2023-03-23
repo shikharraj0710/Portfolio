@@ -34,17 +34,16 @@ export default function intro({ education, skills, experience }) {
 
 export async function getServerSideProps() {
 
-  const [eduRes, skillsRes, experienceRes] = await Promise.all([
-    fetch(`${server}/api/education/`),
-    fetch(`${server}/api/skill/`),
-    fetch(`${server}/api/experience/`)
-  ]);
-  const [education, skills, experience] = await Promise.all([
-    eduRes.json(),
-    skillsRes.json(),
-    experienceRes.json()
-  ]);
-  if (!education || !skills || !experience) {
+  const eduRes = await fetch(`${server}/api/education`);
+  const education = await eduRes.json();
+
+  const skillsRes = await fetch(`${server}/api/skill`);
+  const skills = await skillsRes.json();
+
+  const experienceRes = await fetch(`${server}/api/experience`);
+  const experience = await experienceRes.json();
+
+  if (!education && !skills && !experience) {
     return {
       notFound: true,
     };

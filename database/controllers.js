@@ -36,6 +36,20 @@ export async function getEducations(req, res, method) {
         res.status(404).json({ error: errors })
     }
 }
+export async function getSingleEducation(id, res, method) {
+    try {
+         Educations.findById(id, function (err, docs) {
+            if (err) {
+                return res.status(404).json({ method, error: "No Data Found!!!" })
+            } else {
+                return res.status(200).json({ method, data: docs })
+            }
+        })
+    } catch (errors) {
+        res.status(404).json({ error: errors })
+    }
+}
+
 export async function addEducation(req, res, method) {
     try {
         const formData = req.body;
@@ -47,6 +61,46 @@ export async function addEducation(req, res, method) {
         res.status(404).json({ error: errors })
     }
 }
+
+export async function editEducation(req, res, method) {
+    try {
+        const formData = req.body;
+        const { id } = req.query;
+        if (!formData) return res.status(404).json({ method, error: "Form Data not found" });
+        const { course, college, percentage, session } = formData;
+        Educations.findByIdAndUpdate({ _id: id }, { course, college, percentage, session }, { new: true }, function (err, docs) {
+            if (err) {
+                return res.status(500).json({ method, error: "Error while updating education" })
+            }
+            else {
+                return res.status(201).json({ method, message: "Education Edited Successfully", data: docs })
+            }
+        })
+    } catch (errors) {
+        res.status(404).json({ error: errors })
+    }
+}
+
+export async function deleteEducation(req, res, method) {
+    try {
+        const formData = req.body;
+        const { id } = req.query;
+        if (!formData) return res.status(404).json({ method, error: "Form Data not found" });
+        const { confirmText } = formData;
+        if (confirmText !== "DELETE") return res.status(403).json({ method, error: "Confirm Text not matched" })
+        Educations.findByIdAndDelete(id, { new: true }, function (err, docs) {
+            if (err) {
+                return res.status(500).json({ method, error: "Error while deleting Education" })
+            }
+            else {
+                return res.status(201).json({ method, message: "Education Deleted Successfully", data: docs })
+            }
+        })
+    } catch (errors) {
+        res.status(404).json({ error: errors })
+    }
+}
+
 export async function getSkills(req, res, method) {
     try {
         const skills = await Skills.find({})
@@ -146,7 +200,6 @@ export async function editExperience(req, res, method) {
     try {
         const formData = req.body;
         const { id } = req.query;
-        console.log(id)
         if (!formData) return res.status(404).json({ method, error: "Form Data not found" });
         const { title, duration, organization: institute, designation: expertise } = formData;
         Experience.findByIdAndUpdate({ _id: id }, { title, duration, institute, expertise }, { new: true }, function (err, docs) {

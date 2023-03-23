@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { useForm } from 'react-hook-form';
 import { server } from '../../../config';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 function addExperience() {
     const router = useRouter();
@@ -42,9 +43,9 @@ function addExperience() {
             <Head><title>Add Experience</title></Head>
             <div className='min-h-[70%]'>
                 <div className='grid place-items-center my-16 '>
-                    <button className=''>
-                        <a className=' ml-auto text-right border-2 border-solid border-darkGolden rounded-md px-5 py-1 uppercase text-customBlack tracking-wider font-medium transition-all focus:outline-none  hover:text-white hover:font-medium hover:bg-[#eba352] ' href='/admin/experienceOperation/'>View All Experiences</a>
-                    </button>
+                    <Link href='/admin/experienceOperation/'>
+                        <a className=' ml-auto mx-auto text-right border-2 border-solid border-darkGolden rounded-md px-5 py-1 uppercase text-customBlack tracking-wider font-medium transition-all focus:outline-none  hover:text-white hover:font-medium hover:bg-[#eba352] ' >View All Experiences</a>
+                    </Link>
                 </div>
 
                 <form id="experienceAddForm" className="mb-8 md:mb-16 ">

@@ -1,6 +1,8 @@
 import React from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import BorderColorIcon from '@mui/icons-material/BorderColor';
 import "@splidejs/react-splide/css";
+import Link from "next/link";
 
 export default function EducationSlider({ data }) {
 
@@ -11,6 +13,11 @@ export default function EducationSlider({ data }) {
           education
         </div>
         <div className="flex rounded-lg h-full bg-gray-100  px-4 py-16 flex-col">
+        <Link href="/admin/educationOperation">
+          <a>
+            <BorderColorIcon className="absolute transition-all md:right-3 md:top-3 hover:scale-125 focus:scale-125 cursor-pointer hover:text-black " titleAccess="Modify?" />
+          </a>
+          </Link>
           <Splide
             aria-label="Banner Information"
             options={{
@@ -28,7 +35,7 @@ export default function EducationSlider({ data }) {
                     <div className="text-md md:text-lg text-gray-600 text-bold font-mono text-center font-bold">
                       {d?.course}
                     </div>
-                    <div className="text-sm">
+                    <div className="text-sm text-center">
                       <p>{d?.college} </p>
                       <p>{d?.percentage}</p>
                       <p>{d?.session}</p>

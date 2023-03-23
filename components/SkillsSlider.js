@@ -2,6 +2,7 @@ import React from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import BorderColorIcon from '@mui/icons-material/BorderColor';
+import Link from "next/link";
 
 export default function SkillsSlider({ data }) {
 
@@ -12,9 +13,12 @@ export default function SkillsSlider({ data }) {
           skills
         </div>
         <div className="flex rounded-lg h-full bg-gray-100  px-4 py-16 flex-col">
-          <a href="/admin/skillOperations">
+          <Link href="/admin/skillOperations">
+          <a>
             <BorderColorIcon className="absolute md:right-3 md:top-3 hover:scale-125 focus:scale-125 cursor-pointer hover:text-black transition-all" titleAccess="Modify?" />
           </a>
+          </Link>
+          
           <Splide
             aria-label="Banner Information"
             options={{
@@ -28,13 +32,12 @@ export default function SkillsSlider({ data }) {
             {data?.data?.map((d, index) => {
               return (
                 <SplideSlide key={index}>
-                  <section className="flex flex-col justify-center items-center">
+                  <section className="flex flex-col justify-center items-center text-center">
                     <div className="text-lg tracking-wider font-bold md:text-lg text-gray-600 text-bold font-mono">
                       {d?.skill}
                     </div>
                     <div className="text-sm">
                       <p><input type="range" value={d?.progress * 10} className="accent-[#eba352] outline-none border-none" /></p>
-                      {/* <p>{d?.progress} </p> */}
                     </div>
                   </section>
                 </SplideSlide>

@@ -1,14 +1,13 @@
 import mongoose from "mongoose";
 
-const connectMongo = async() => {
-    
+const connectMongo = async () => {
     try{
         const { connection } = await mongoose.connect(process.env.MONGO_URI);
-        console.log(connection)
-        if( connection.readyState === 1) {
+        if(connection.readyState === 1) {
             console.log("Database connected!!")
         }
     } catch(errors) {
+        console.log(errors)
         return Promise.reject(errors)
     }
 }

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { server } from '../../../../config';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 function editExperience({ data, length }) {
     const router = useRouter();
@@ -50,9 +51,9 @@ function editExperience({ data, length }) {
             <Head><title>Edit Experience</title></Head>
             <div className='min-h-[70%]'>
                 <div className='grid place-items-center my-16 '>
-                    <button className=''>
-                        <a className=' ml-auto text-right border-2 border-solid border-darkGolden rounded-md px-5 py-1 uppercase text-customBlack tracking-wider font-medium transition-all focus:outline-none  hover:text-white hover:font-medium hover:bg-[#eba352] ' href='/admin/experienceOperation/'>View All Experiences</a>
-                    </button>
+                    <Link href='/admin/experienceOperation/'>
+                        <a className=' ml-auto text-right border-2 border-solid border-darkGolden rounded-md px-5 py-1 uppercase text-customBlack tracking-wider font-medium transition-all focus:outline-none  hover:text-white hover:font-medium hover:bg-[#eba352] ' >View All Experiences</a>
+                    </Link>
                 </div>
                 <form id="experienceEditForm" className="my-8 md:my-12">
                     <div className="p-4 w-full md:w-4/5 mx-auto bg-slate-200 rounded-md drop-shadow-lg shadow-xl">

@@ -1,5 +1,5 @@
 import connectMongo from "../../database/conn";
-import { addEducation, getEducations } from "../../database/controllers";
+import { addEducation, deleteEducation, editEducation, getEducations, getSingleEducation } from "../../database/controllers";
 
 export default async function handler(req, res) {
   await connectMongo().catch(() =>
@@ -10,10 +10,18 @@ export default async function handler(req, res) {
 
   switch (method) {
     case "GET":
-      getEducations(req, res, method);
+      const { id } = req.query;
+      console.log(id)
+      id ? getSingleEducation(id, res, method) : getEducations(req, res, method)
       break;
     case "POST":
       addEducation(req, res, method);
+      break;
+    case "PUT":
+      editEducation(req, res, method);
+      break;
+    case "DELETE":
+      deleteEducation(req, res, method);
       break;
     default:
       res.setHeader("Allow", ["GET", "POST"]);
