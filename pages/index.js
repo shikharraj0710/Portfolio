@@ -17,17 +17,16 @@ export default function Index({ data }) {
 
   return (
     <>
-    <Head><title>Home</title></Head>
-     <Modal  show={show} setShow={setShow}/>
-     <Home handleHireMeClick={handleHireMeClick}/>
+      <Head><title>Home</title></Head>
+      <Modal show={show} setShow={setShow} />
+      <Home handleHireMeClick={handleHireMeClick} />
       <Career data={data} />
-      <ContactForm hireRef={hireRef}/>
+      <ContactForm hireRef={hireRef} />
     </>
   );
 }
 
 export async function getServerSideProps() {
-
   const res = await fetch(`${server}/api/skill`, {
     method: "GET",
     headers: {

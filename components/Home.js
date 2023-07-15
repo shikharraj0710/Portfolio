@@ -46,10 +46,8 @@ export default function Home({ handleHireMeClick }) {
           <div className="title-font text-4xl md:text-7xl mb-4  font-heading text-customBlack">
             Hi there!
           </div>
-          <p className="mb-8 text-lg font-content text-darkGrey leading-relaxed w-full text-justify ">
-            Fuelled by a passion for developing compelling Web Applications, I
-            have a deep desire to excel and continuously improve in my work.
-            Learn more about my journey below.
+          <p className="mb-8 text-md font-content text-darkGrey leading-relaxed w-full text-justify ">
+            I am a <b>MERN Stack Developer</b>. With my expertise in the MERN (MongoDB, Express.js, React.js, Node.js) technology stack, I am passionate about creating robust and scalable web applications. Throughout my career, I have honed my skills in both front-end and back-end development, allowing me to deliver end-to-end solutions that meet the needs of clients and users. Learn about my journey below.
           </p>
           <div className="flex justify-between items-center w-full">
             <button
