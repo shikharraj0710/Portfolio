@@ -12,7 +12,7 @@ export default function intro({ education, skills, experience }) {
       <Head>
         <title>Inroduction</title>
       </Head>
-      <section className="text-gray-600 body-font bg-gray-200 min-h-[80%] overflow-hidden">
+      <section className="text-gray-600 body-font bg-gray-200 min-h-[80vh] overflow-hidden">
         <div className="container px-5 pt-8 pb-24 mx-auto">
           <div className="flex flex-col text-center w-full">
             <div className="font-heading text-md md:text-lg lg:text-3xl text-black uppercase flex justify-center my-10 font-medium">

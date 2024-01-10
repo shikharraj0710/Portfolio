@@ -24,7 +24,7 @@ export default function Projects({ data, length }) {
         return ar;
       });
   }, [data]);
-  
+
   const handleSideBarClick = (e) => {
     setIdShown(e.target.dataset.id);
     e.target.parentElement
@@ -44,8 +44,6 @@ export default function Projects({ data, length }) {
   useEffect(() => {
     setItems(() => {
       let ar = data?.data.filter((d) => {
-        console.log(d.index);
-
         if (d.index.toString() === idShown.toString()) return d;
       });
       return ar;
@@ -68,9 +66,12 @@ export default function Projects({ data, length }) {
       <Head>
         <title>Projects</title>
       </Head>
-      <div className="w-[95%] lg:w-[70%] mx-auto bg-gray-200 ">
+      <div className="font-heading text-md md:text-lg lg:text-3xl text-black uppercase flex justify-center my-10 font-medium">
+          Projects
+        </div>
+      <div className="w-[95%] lg:w-[70%] mx-auto min-h-[75vh]">
         {length > 0 ? (
-          <div className="border-2 border-[#EBA352] shadow-sm shadow-yellow-500 rounded-md md:px-5 py-6 my-8 md:my-16  grid md:grid-cols-4">
+          <div className="border-2 border-[#EBA352] bg-gray-200 shadow-sm shadow-yellow-500 rounded-md md:px-5 py-6 my-8 md:my-16 grid md:grid-cols-4">
             <div className="md:col-span-3 bg-gray-100 px-4 py-2 rounded-md">
               <MainProject data={items[0]} ref={myRef} />
             </div>
@@ -88,7 +89,7 @@ export default function Projects({ data, length }) {
               <Link href="/admin/projectOperation">
                 <a className="text-sm border-2 border-solid border-darkGolden rounded-md px-3 py-1 uppercase text-customBlack tracking-wider group  focus:outline-none  hover:text-customBlack hover:font-medium hover:bg-[#eba352] transition-all duration-200 w-full ">
                   ADD PROJECT{" "}
-                  <i class="fas fa-external-link-square-alt text-darkGolden group-hover:text-black"></i>
+                  <i className="fas fa-external-link-square-alt text-darkGolden group-hover:text-black"></i>
                 </a>
               </Link>
             </button>

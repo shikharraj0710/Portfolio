@@ -10,7 +10,7 @@ function LinkComponentToIntroPage() {
 
 export default function Career({ data }) {
     const { ref, inView } = useInView({
-        threshold: 0.4
+        threshold: 0.35
     });
     const animation = useAnimation();
 
@@ -25,8 +25,6 @@ export default function Career({ data }) {
         }
     }, [inView]);
 
-    console.log(data)
-
     return (
         <div ref={ref}>
             <motion.div animate={animation} className="w-[95%] lg:w-[80%] mx-auto flex px-5 py-10 md:py-16 md:flex-row flex-col items-center">
@@ -35,25 +33,26 @@ export default function Career({ data }) {
                     <div className='text-md font-content text-darkGrey text-justify'>
                         I am currently working for <b>O-LINE-O INDIA Pvt. Ltd.</b> as a Full Stack Web Developer and gained emmense industry knowledge excelling my skills. I have been a part of multiple Projects co-ordaniting and handling various Client requirements.
                         <br />
-                        <div><span className='underline text-slate-700 '>Education:</span> <LinkComponentToIntroPage /></div>
-                        Completed <b>Bachelor of Science in Information Technology (BScIT)</b> from Kolhan University securing 87%.
                         <br />
                         <ol className='my-2'>
                             <span className='underline text-slate-700 '>Past Experiences:<LinkComponentToIntroPage /> </span>
                             <li className='text-md'>
-                                <b>Frontend Web Developer Intern</b> at <i>Dirums Collective Private Limited</i>
-                            </li>
-                            <li className='text-md'>
-                                <b>Frontend Developer</b> at <i>Netmore Technology</i>
+                                <b>Frontend Web Developer Intern</b> at <i>Dirums Collective Private Limited (Jamshedpur, Jharkhand )</i>
                             </li>
                         </ol>
+                        <div>
+                            <span className='underline text-slate-700'>Education:</span> <LinkComponentToIntroPage />
+                        </div>
+                        Completed <b>Bachelor of Science in Information Technology (BSc.IT)</b> from Kolhan University securing 87%.
+                        <br />
+                
                         <ol>
-                            <span className='underline text-slate-700 '>Trainings:<LinkComponentToIntroPage /> </span>
+                            <span className='underline text-slate-700 mt-1 '>Trainings:<LinkComponentToIntroPage /> </span>
                             <li className='text-md'>
-                                <b>PHP Web Development</b> from <i>Adityapur Auto Cluster (onsite)</i>
+                                <b>PHP Web Development</b> from <i>Adityapur Auto Cluster (onsite)</i> (Jamshedpur, Jharkhand )
                             </li>
-                            <li className='text-md'>
-                                <b>Full Stack Development</b> from <i>Udemy (online)</i>
+                            <li className='text-md mt-1'>
+                                <b>Full Stack Development (MERN)</b> from <i>Udemy (online)</i>
                             </li>
                         </ol>
 

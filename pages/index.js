@@ -27,22 +27,30 @@ export default function Index({ data }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`${server}/api/skill`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  const data = await res.json();
-  if (!data) {
+  try {
+    const res = await fetch(`${server}/api/skill`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!res.ok) {
+      throw new Error(`HTTP error! Status: ${res.status}`);
+    }
+
+    const data = await res.json();
+
+    return {
+      props: {
+        data: data,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching data:", error.message);
     return {
       notFound: true,
     };
   }
-
-  return {
-    props: {
-      data: data,
-    },
-  };
 }
+

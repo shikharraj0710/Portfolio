@@ -6,10 +6,11 @@ body {
   background-color: #eeeff1;
   position: relative;
   scroll-behavior: smooth;
+  --primary-orange: #eba352;
 }
 
 ::-webkit-scrollbar {
-  width: 7px !important;
+  width: 14px !important;
 }
 
 ::-webkit-scrollbar-track {
@@ -33,10 +34,10 @@ body {
   background-color: #1e1e1e;
 }
 .text-darkGolden {
-  color: #eba352;
+  color: var(--primary-orange);
 }
 .bg-darkGolden {
-  background: #eba352;
+  background: var(--primary-orange);
 }
 .text-pureWhite {
   color: #ffffff;
@@ -51,7 +52,7 @@ body {
   background-color: #f22e3e;
 }
 .border-darkGolden {
-  border-color: #eba352;
+  border-color: var(--primary-orange);
 }
 @keyframes modal-open {
   from {
@@ -90,7 +91,7 @@ body {
 }
 
 .splide__pagination__page {
-  background-color: #eba352;
+  background-color: var(--primary-orange);
 }
 
 .modal-animation-open {
@@ -106,10 +107,10 @@ body {
   bottom: -1.5em !important;
 }
 .splide__pagination__page {
-  background-color: #eba352!important;
+  background-color: var(--primary-orange)!important;
 }
 .splide__arrow {
-  background-color: #eba352!important;
+  background-color: var(--primary-orange)!important;
 }
 .splide__arrow svg path{
   fill: #fff!important;
